@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f4f6;
+        color: #333;
+    }
+
+    h2 {
+        text-align: center;
+        color: #34495e;
+        margin: 20px 0;
+        font-weight: 600;
+    }
+
+    h2 p {
+        display: inline;
+        color: #3498db;
+        font-weight: bold;
+    }
+
+    form {
+        width: 50%;
+        margin: 20px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    form button {
+        width: 100%;
+        padding: 12px;
+        background: #2ecc71;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    form button:hover {
+        background: #27ae60;
+    }
+
+    div {
+        width: 80%;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    div > div {
+        background: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    div > div:hover {
+        transform: translateY(-5px);
+    }
+
+    div img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    div p {
+        margin: 10px 0;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    div p.name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #3498db;
+    }
+
+    div button {
+        margin-top: 10px;
+        padding: 10px;
+        background: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    div button a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+    }
+
+    div button:hover {
+        background: #c0392b;
+    }
+
+    div button:last-child {
+        background: #3498db;
+    }
+
+    div button:last-child:hover {
+        background: #2980b9;
+    }
+</style>
+<body>
+    <h2>Edit <p class="h2-p">Book</p></h2>
+
+    <form action="/updateData" method="post" enctype="multipart/form-data">
+        <input type="text" style="display: none;" placeholder="Enter Book Id" hidden name="id" value="<%=data.id%>">
+        
+        <input type="text" placeholder="Enter Book Name" name="name" value="<%=data.name%>">
+        
+        <input type="text" placeholder="Enter Author Name" name="author" value="<%=data.author%>">
+        
+        <input type="text" placeholder="Enter language " name="language" value="<%=data.language%>">
+        
+        <input type="text" placeholder="Enter Book Price" name="price" value="<%=data.price%>">
+
+        <input type="file" name="image">
+        
+        <img src="<%=data.image%>" alt="">
+
+        <button type="submit">Update Data</button>
+    </form>
+</body>
+</html>
