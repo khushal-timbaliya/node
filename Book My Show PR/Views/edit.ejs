@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background: #ffffff;
+    width: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+form h6 {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-weight: bold;
+}
+form input[type="text"],
+form input[type="file"] {
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+form input[type="text"]:focus,
+form input[type="file"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+form img {
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+form button {
+    background: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+</style>
+</head>
+<body>
+    <form action="/updateData" method="post" enctype="multipart/form-data">
+        <input hidden type="text" value="<%=data.id%>" name="id" >
+        <h6>Movie Name:</h6>
+        <input type="text" value="<%=data.name%>" placeholder="Enter Movie Name" name="name">
+        <h6>Movie Charecter:</h6>
+        <input  type="text" value="<%=data.directername%>" placeholder="Enter DirectorName" name="directername">
+        <h6>Movie Director:</h6>
+        <input type="text" value="<%=data.catagory%>" placeholder="Enter catagory" name="catagory">
+        <h6>Movie Image:</h6>
+        <input type="file" name="image">
+        <img src="<%=data.image%>" alt="hello" width="15%">      
+        <button type="submit">updateData</button>
+    </form>
+</body>
+</html>

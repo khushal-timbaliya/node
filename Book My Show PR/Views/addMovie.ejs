@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+    .f1{
+        height: 500px;
+        width: 30%;
+    }
+    .f2{
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 4%;
+    }
+    .f4{
+        height: 400px; 
+        width: 80%;
+        margin-top: 2%;
+    }
+    input{
+        height: 30px;
+        width: 80%;
+    }
+    .f7{
+        height: 40px;
+        width: 150px;
+        background-color: #F84464;
+        color: white;
+        border: none;
+    }
+</style>
+<body>
+    <%-include("hader")%>
+    <div style="height: 500px; width: 100%; display: flex; justify-content: center; align-items: center;">
+        <div class="f1">
+            <form action="/addData" enctype="multipart/form-data"  method="post" >
+            
+                <h1 class="f2">Add Movie</h1>
+           
+               <center>
+                <div class="f4">
+                    <input type="text" placeholder="Enter Movie Name" name="name"  style="margin-top: 10%;">
+                    <input type="text" placeholder="Enter directername" name="directername"  style="margin-top: 10%;">
+                    <input type="text" placeholder="Enter catagory" name="catagory"  style="margin-top: 10%;">
+                    <center><input type="file" name="image" required style="margin-top: 10%; margin-left: 25%; height: 40px;"><br></center>
+                    <button type="submit" style="border: none;">Add Data</button>
+                </div>
+               </center>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
